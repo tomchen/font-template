@@ -40,7 +40,7 @@ In the menu, File -> Generate Fonts...
 
 ![FontForge menu generate font](https://github.com/tomchen/font-template/blob/master/img/6-fontforge_menu_generate_font.png)
 
-Type in font name, select a font format (typically TrueType or OpenType), click "Generate" button. Then you have your self-made computer font!
+Type in a font name, select a font format (typically TrueType or OpenType), click "Generate" button. Then you have your self-made computer font!
 
 ![FontForge generate font](https://github.com/tomchen/font-template/blob/master/img/7-fontforge_generate_font.png)
 
