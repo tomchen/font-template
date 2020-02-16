@@ -12,9 +12,21 @@ Adobe Illustrator font templates that allow you to edit shapes of glyphs (charac
 
 Open font_template.ai, draw your glyphs in the "Artwork glyph" layer
 
-......
+![AI font template](https://github.com/tomchen/font-template/blob/master/img/1-ai_font_template.png)
 
-### Other optional usage
+![AI menu export](https://github.com/tomchen/font-template/blob/master/img/2-ai_menu_export.png)
+
+![AI export](https://github.com/tomchen/font-template/blob/master/img/3-ai_export.png)
+
+![FontForge import](https://github.com/tomchen/font-template/blob/master/img/4-fontforge_import.png)
+
+![FontForge adjust width](https://github.com/tomchen/font-template/blob/master/img/5-fontforge_adjust_width.png)
+
+![FontForge menu generate font](https://github.com/tomchen/font-template/blob/master/img/6-fontforge_menu_generate_font.png)
+
+![FontForge generate font](https://github.com/tomchen/font-template/blob/master/img/7-fontforge_generate_font.png)
+
+### Other optional workflow
 #### Export all glyphs as individual SVG files
 In the menu, click File -> Execute Script
 
@@ -47,4 +59,4 @@ AGL (Adobe Glyph List) glyphlist.txt
 https://github.com/adobe-type-tools/agl-aglfn/blob/master/glyphlist.txt
 
 ## License
-MIT License
+[MIT License](https://github.com/tomchen/font-template/blob/master/LICENSE)
