@@ -74,7 +74,7 @@ https://www.schoolofmotion.com/blog/custom-font-illustrator-fontforge
 
 Font creation template  
 https://community.fontself.com/t/font-creation-template/165  
-*This project is highly inspired by Fontself community's awesome template, as my template pick the same glyphs and has the same order. However, my template is a total remake, and does not require Fontself software.*
+*This project is highly inspired by Fontself community's awesome template, as my template picks the same glyphs and has the same order. However, my template is a total remake, and does not require Fontself software.*
 
 Notes on dumping SVG outlines into a FontForge file  
 https://gist.github.com/psmay/fd3e7e91893f6012b262
