@@ -44,7 +44,7 @@ Type in a font name, select a font format (typically TrueType or OpenType), clic
 
 ![FontForge generate font](https://github.com/tomchen/font-template/blob/master/img/7-fontforge_generate_font.png)
 
-### Other optional workflow
+### Other optional workflow and tips
 
 #### font_template_single.ai file
 This font template can be used to draw single glyph and produce single glyph SVG.
@@ -55,7 +55,7 @@ The following image depicts guides of a single glyph.
 In FontForge, select a glyph or open a glyph, then File -> Import..., select "SVG" as "Format", select your single glyph SVG file and import it.
 
 #### batch_import_svg.py file
-Modify batch_import_svg.py file if you want to open a existing .sfd font file, or generate .ttf directly.
+Modify batch_import_svg.py file if you want to open an existing .sfd font file, or generate .ttf directly.
 
 #### Export all glyphs as individual SVG files in FontForge
 In the FontForge menu, click File -> Execute Script
@@ -65,6 +65,12 @@ Copy and paste: `SelectWorthOutputting(); foreach Export("svg"); endloop;`
 Select "FF" radial button.
 
 Click "OK" button.
+
+#### Use "Group"
+Use "Group" (Ctrl+G) to group paths in Adobe Illustrator, DO NOT use Object -> Coumpound Path -> Make.
+
+#### Use existing free and open-source font file
+Instead of create a font file with FontForge from scrach, it's sometimes a good idea to download an existing free and open-source font file, such as Adobe's [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro/tree/release/TTF) (better coverage) or [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro/tree/release/TTF) (if you are creating a serif font) Regular weight. Open this font file with FontForge, edit it to create your font.
 
 ## References and credits
 
