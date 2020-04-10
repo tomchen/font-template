@@ -28,7 +28,7 @@ Exported individual glyph SVG files are inside an "SVG" folder, put it in a fold
 
 For Mac and Linux users, execute the `batch_import_svg.py` file with Python 3.
 
-For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`*, navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
+For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`,* navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
 
 *(\*: for 64 bit Windows it's `Program Files (x86)`, for 32 bit Windows it's `Program Files`)*
 
