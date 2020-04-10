@@ -14,5 +14,9 @@ for p in svgFilePaths:
 	glyph = font.createChar(int(dec))
 	glyph.importOutlines(str(p))
 
-# font.generate('output.ttf')
 font.save('output.sfd')
+
+# font.generate('output.otf')
+# font.generate('output.ttf')
+# font.generate('output.woff')
+# font.generate('output.woff2')

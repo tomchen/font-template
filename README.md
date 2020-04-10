@@ -1,12 +1,12 @@
-# Font Template: simplest way to create your own font using Adobe Illustrator and FontForge
+# Font Template: the simplest way to create your own font using Adobe Illustrator and FontForge
 
-Adobe Illustrator font templates that allow you to edit shapes of glyphs (characters) altogether in the same .ai file (or in their separate, respective .ai files if you want), then export them as SVG files, which can be imported into font file in free and open-source font maker [FontForge](https://fontforge.org/) and generate final production font files.
+Adobe Illustrator font templates that allow you to edit shapes of glyphs (characters) altogether in one `.ai` file (or in their separate, respective .ai files if you want), then export them as `.svg` files, which can be imported into a font file in free and open-source font maker [FontForge](https://fontforge.org/), and generate final production font files (`.otf`, `.ttf`, `.woff`, `.woff2`, etc.).
 
 ## Files
 
-* **`font_template.ai`**: Adobe Illustrator font template for basic and extended symboles and latin letters (significant CP1252 coverage), each glyph has a separate artboard, so that you can easily export each of them as individual glyph SVG file.
+* **`font_template.ai`**: Adobe Illustrator font template for basic and extended symbols and latin letters (significant CP1252 coverage), each glyph has a separate artboard, so that you can easily export each of them as individual glyph SVG file.
 * **`font_template_single.ai`**: Adobe Illustrator font template for a single glyph. If you want, you can use this file instead of (or along with) `font_template.ai`.
-* **`batch_import_svg.py`**: a python script that can import multiple SVG individual glyph files into FontForge's font file
+* **`batch_import_svg.py`**: a python script that can import multiple SVG individual glyph files into FontForge's `.sfd` font file (and can optionally convert it to production font files, i.e. `.otf`, `.ttf`, `.woff`, `.woff2`, etc.)
 
 ## Usage
 
@@ -28,11 +28,13 @@ Exported individual glyph SVG files are inside an "SVG" folder, put it in a fold
 
 For Mac and Linux users, execute the `batch_import_svg.py` file with Python 3.
 
-For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`, navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`.
+For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`*, navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
+
+*(\*: for 64 bit Windows it's `Program Files (x86)`, for 32 bit Windows it's `Program Files`)*
 
 ![FontForge import](https://github.com/tomchen/font-template/blob/master/img/4-fontforge_import.png)
 
-Open output.sfd font file with FontForge. Adjust glyphs' width (use Shift key to select all the glyphs you want to adjust width then in the menu "Metrics" -> "Auto Width", OR, double click one glyph and manually drag its border line).
+Open the `output.sfd` font file with FontForge. Adjust glyphs' width (use Shift key to select all the glyphs you want to adjust width then in the menu "Metrics" -> "Auto Width", OR, double click a glyph and manually drag its border line).
 
 ![FontForge adjust width](https://github.com/tomchen/font-template/blob/master/img/5-fontforge_adjust_width.png)
 
@@ -57,7 +59,7 @@ In FontForge, select a glyph or open a glyph, then "File" -> "Import"..., select
 
 #### batch_import_svg.py file
 
-Modify `batch_import_svg.py` file if you want to open an existing .sfd font file, or generate .ttf directly.
+Modify `batch_import_svg.py` file if you want to open an existing `.sfd` font file, or generate `.otf`, `.ttf`, `.woff`, `.woff2` directly, instead of doing so with FontForge GUI.
 
 #### Export all glyphs as individual SVG files in FontForge
 
