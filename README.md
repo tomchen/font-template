@@ -28,19 +28,19 @@ Select the glyphs you want to export, select "SVG" format, click "Export Artboar
 
 Exported individual glyph SVG files are inside an "SVG" folder, put it in a folder that also contains the `batch_import_svg.py` script file.
 
-For Mac and Linux users, execute the `batch_import_svg.py` file with Python 3.
-
 For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`,* navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
+
+For Mac and Linux users, `cd <FOLDER_PATH>` and execute the `batch_import_svg.py` file with Python 3.
 
 *(\*: for 64 bit Windows it's `Program Files (x86)`, for 32 bit Windows it's `Program Files`)*
 
 ![FontForge import](https://github.com/tomchen/font-template/blob/master/img/4-fontforge_import.png)
 
-Open the `output.sfd` font file with FontForge. Adjust glyphs' width (use Shift key to select all the glyphs you want to adjust width, then, in the menu, select "Metrics" -> "Auto Width", OR, double click a glyph and manually drag its border line).
+Open the `output.sfd` font file with FontForge. Adjust glyphs' width (use <kbd>Shift</kbd> key to select all the glyphs you want to adjust width, then, in the menu, select "Metrics" -> "Auto Width", OR, double click a glyph and manually drag its border line).
 
 ![FontForge adjust width](https://github.com/tomchen/font-template/blob/master/img/5-fontforge_adjust_width.png)
 
-In the menu, select "File" -> "Generate Fonts"...
+In the menu, select "File" -> "Generate Fonts..."
 
 ![FontForge menu generate font](https://github.com/tomchen/font-template/blob/master/img/6-fontforge_menu_generate_font.png)
 
@@ -57,7 +57,7 @@ This font template can be used to draw single glyph and produce single glyph SVG
 The following image depicts guides of a single glyph.
 ![Font template single description](https://github.com/tomchen/font-template/blob/master/template_desc/font_template_single_description.png)
 
-In FontForge, select a glyph or open a glyph, then click "File" -> "Import"..., select "SVG" as "Format", select your single glyph SVG file and import it.
+In FontForge, select a glyph or open a glyph, then click "File" -> "Import...", select "SVG" as "Format", select your single glyph SVG file and import it.
 
 ### batch_import_svg.py file
 
