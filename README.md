@@ -48,13 +48,15 @@ Type in a font name, select a font format (typically TrueType or OpenType), clic
 
 ![FontForge generate font](https://github.com/tomchen/font-template/blob/master/img/7-fontforge_generate_font.png)
 
-## Other optional workflow and tips
+You can stop here and do not need to read the following sections.
+
+## Other optional workflows and tips
 
 ### font_template_single.ai file
 
 This font template can be used to draw single glyph and produce single glyph SVG.
 
-The following image depicts guides of a single glyph.
+The following image depicts the guides of a single glyph.
 ![Font template single description](https://github.com/tomchen/font-template/blob/master/template_desc/font_template_single_description.png)
 
 In FontForge, select a glyph or open a glyph, then click "File" -> "Import...", select "SVG" as "Format", select your single glyph SVG file and import it.
@@ -75,11 +77,51 @@ Click "OK" button.
 
 ### Join overlapping paths
 
-If a glyph's shape contains multiple overlapping paths, it would be better to join them ([a nice YouTube tutorial](https://www.youtube.com/watch?v=ESj0M0l6Rho)) instead of grouping them or making them a compound path, to avoid font rendering problems for overlapping paths. For seperate (non-overlapping) paths, you can use "group" (<kbd>Ctrl</kbd>+<kbd>G</kbd>) or "compound path" ("Object" -> "Compound Path" -> "Make").
+If a glyph's shape contains multiple overlapping paths, it would be better to join them ([a nice YouTube tutorial](https://www.youtube.com/watch?v=ESj0M0l6Rho)) instead of grouping them or making them a compound path. This step helps to avoid font rendering problems for overlapping paths. However, for seperate (non-overlapping) paths, feel free to use "group" (<kbd>Ctrl</kbd>+<kbd>G</kbd>) or "compound path" ("Object" -> "Compound Path" -> "Make").
 
 ### Use existing free and open-source font file
 
-Instead of creating a font file with FontForge from scrach, it's sometimes a good idea to download an existing free and open-source font file, such as Adobe's [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro/tree/release/TTF) (better coverage) or [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro/tree/release/TTF) (if you are creating a serif font) Regular weight. Open this font file with FontForge, edit it to create your font. However, if you use an existing font, you may need to edit not only A-Z, a-z but also their [ligatures](https://fontforge.org/docs/tutorial/editexample4.html#creating-a-ligature) such as "ff" and "fi".
+Instead of creating a font file with FontForge from scrach, it's sometimes a good idea to use an existing free and open-source font file as a base and fallback font. Typical open-source fonts with good glyph coverage are Adobe's [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro/tree/release/TTF) and [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro/tree/release/TTF). Choose a weight such as "Regular", depending on your needs. Open the font file with FontForge, edit it to create your font. However, if you use an existing font, you may need to edit not only A-Z, a-z but also their [ligatures](https://fontforge.org/docs/tutorial/editexample4.html#creating-a-ligature) such as "ff" and "fi".
+
+### Web fonts (alphabet or icon)
+
+Once you have your own font, you can use it on your web pages (including websites, web applications, Electron-compiled cross-plateform Desktop applications, or even React Native / NativeScript mobile app).
+
+Your font can be alphabet font or monochrome icon font. If you want to show color icons, use SVG or PNG.
+
+Put your `.woff2` and `.woff` font files (`my_font.woff2` and `my_font.woff` in the example) in your CSS folder and insert the following code in your CSS file (it [supports](https://css-tricks.com/snippets/css/using-font-face/#practical-level-of-browser-support) IE9+):
+
+```css
+@font-face {
+  font-family: 'MyFont';
+  src: url('my_font.woff2') format('woff2'),
+       url('my_font.woff') format('woff');
+}
+```
+
+(If you do not want to [support any IE](https://caniuse.com/#search=woff2), you can delete the `.woff` file and use only `.woff2` (the smallest and latest format))
+
+Then you use your customized `font-family` name ('MyFont' in the example):
+
+```css
+.my-special-font {
+  font-family: 'MyFont', sans-serif;
+  color: yellow;
+  font-size: 20px;
+}
+```
+
+HTML:
+
+```html
+<span class="my-special-font">B<span>
+```
+
+If it is a monochrome icon font, the letter B in the HTML code will be shown as the monochrome icon mapping to the letter B. Although web developers usually use characters in Unicode [Private Use Area](https://en.wikipedia.org/wiki/Private_Use_Areas) such as U+EEA0 and U+F2BB instead of basic latin letters and other commonly-used characters over semantics / SEO / accessibility concerns, nobody prevents you from using latin letters. To address those concerns, you may semantically identify a font icon by adding `role` and `aria-label` attributes to your HTML element:
+
+```html
+<span role="img" aria-label="Favorite">B<span>
+```
 
 ## Real-world example
 
@@ -107,6 +149,12 @@ https://stackoverflow.com/questions/23365299/how-to-import-fontforge-to-python-i
 AGL (Adobe Glyph List) glyphlist.txt  
 https://github.com/adobe-type-tools/agl-aglfn/blob/master/glyphlist.txt
 
+Using @font-face  
+https://css-tricks.com/snippets/css/using-font-face/#practical-level-of-browser-support
+
+Semantically identifying a font icon with role="img"  
+https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA24.html
+
 ## License
 
-[MIT License](https://github.com/tomchen/font-template/blob/master/LICENSE)
+[MIT License](https://github.com/tomchen/font-template/blob/master/LICENSE) for everything in this repository
