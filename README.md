@@ -101,7 +101,7 @@ Put your `.woff2` and `.woff` font files (`my_font.woff2` and `my_font.woff` in 
 
 (If you do not want to [support any IE](https://caniuse.com/#search=woff2), you can delete the `.woff` file and use only `.woff2` (the smallest and latest format))
 
-Then you use your customized `font-family` name ('MyFont' in the example):
+Then use your customized `font-family` name ('MyFont' in the example):
 
 ```css
 .my-special-font {
@@ -114,13 +114,13 @@ Then you use your customized `font-family` name ('MyFont' in the example):
 HTML:
 
 ```html
-<span class="my-special-font">B<span>
+<span class="my-special-font">B</span>
 ```
 
 If it is a monochrome icon font, the letter B in the HTML code will be shown as the monochrome icon mapping to the letter B. Although web developers usually use characters in Unicode [Private Use Area](https://en.wikipedia.org/wiki/Private_Use_Areas) such as U+EEA0 and U+F2BB instead of basic latin letters and other commonly-used characters over semantics / SEO / accessibility concerns, nobody prevents you from using latin letters. To address those concerns, you may semantically identify a font icon by adding `role` and `aria-label` attributes to your HTML element:
 
 ```html
-<span role="img" aria-label="Favorite">B<span>
+<span role="img" aria-label="A bag" class="my-special-font">B</span>
 ```
 
 ## Real-world example
