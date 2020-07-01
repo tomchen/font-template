@@ -10,6 +10,8 @@ Adobe Illustrator font templates that allow you to edit shapes of glyphs (charac
 
 (Instead of downloading the files, you may also `git clone` or [download the whole repository](https://github.com/tomchen/font-template/archive/master.zip), of course)
 
+(**ATTENTION: FontForge Windows Version 20200314 crashes when importing SVG files. This has been fixed but a newer FontForge stable version hasn't been released yet. For now, Windows user should use either a recent non-release build ([2020-06-30 build](https://ci.appveyor.com/api/buildjobs/5tceko609vdf4stw/artifacts/fontforgebuilds%2FFontForge-mingw-w64-i686-81b621-appveyor.7z)), or Version 20190801 release ([download](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-Windows.exe)).** FontForge Linux versions do not have this bug)
+
 ## Usage
 
 Open `font_template.ai`, draw your glyphs in the "Artwork glyph" layer.
@@ -27,8 +29,6 @@ Select the glyphs you want to export, select "SVG" format, click "Export Artboar
 ![AI export](https://github.com/tomchen/font-template/blob/master/img/3-ai_export.png)
 
 Exported individual glyph SVG files are inside an "SVG" folder, put it in a folder that also contains the `batch_import_svg.py` script file.
-
-**(ATTENTION: FontForge Windows Version 20200314 crashes when importing SVG files, while Windows Version 20190801 and any recent Linux versions all work fine. Windows user should use FontForge Version 20190801 ([download](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-Windows.exe)))**
 
 For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`,* navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
 
