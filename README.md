@@ -28,6 +28,8 @@ Select the glyphs you want to export, select "SVG" format, click "Export Artboar
 
 Exported individual glyph SVG files are inside an "SVG" folder, put it in a folder that also contains the `batch_import_svg.py` script file.
 
+**(ATTENTION: FontForge Windows Version 20200314 crashes when importing SVG files, while Windows Version 20190801 and any recent Linux versions all work fine. Windows user should use FontForge Version 20190801 ([download](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-Windows.exe)))**
+
 For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`,* navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
 
 For Mac and Linux users, `cd <FOLDER_PATH>` and execute the `batch_import_svg.py` file with Python 3.
