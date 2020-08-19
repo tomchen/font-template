@@ -87,11 +87,18 @@ Instead of creating a font file with FontForge from scrach, it's sometimes a goo
 
 ### Do not use empty glyphs
 
-When you select glyphs in Illustrator's "Export for Screens" window, you should not select empty glyphs, otherwise, you will see "I'm sorry this file is too complex for me to understand (or is erroneous)" warning when you executing `batch_import_svg.py` script. Nevertheless, the script will not be interrupted and will continue to generate the `output.sfd` file.
+When you select glyphs in Illustrator's "Export for Screens" window, you should not select empty glyphs, otherwise, you will see "I'm sorry this file is too complex for me to understand (or is erroneous)" warning when you executing `batch_import_svg.py` script. Nevertheless, it will not stop and will continue to generate the `output.sfd` file.
 
 ### Update your font_template.ai before 2020-08-19
 
-On 19 August 2020, the project's `font_template.ai` file was updated (many artboard names were changed, e.g. `44 ,` were changed to `44 comma`) to fix an [Unicode filename issue](https://github.com/tomchen/font-template/issues/3). If you have downloaded `font_template.ai` before 2020-08-19 and made your `.ai` file based on the old version, you may optionally update the artboard names in your `font_template.ai` by executing an Adobe Illustrator script file [**`/other_files/update_artboard_names.js`**](https://github.com/tomchen/font-template/raw/master/other_files/update_artboard_names.js): **open your `.ai` file in Adobe Illustrator, in the menu, click "File" -> "Scripts" -> "Other Script...", find and select the downloaded `update_artboard_names.js` file, click "Open", done.** After the update, delete then regenerate your glyph SVG files in `SVG` folder. If you are using the old version but your glyphs are limited to basic [ASCII characters](https://en.wikipedia.org/wiki/ASCII#Character_set) therefore haven't encountered any SVG Unicode filename related problem, you may opt not to update your `.ai` file.
+On 19 August 2020, the project's `font_template.ai` file was updated (many artboard names were changed, e.g. `44 ,` were changed to `44 comma`) to fix an [Unicode filename issue](https://github.com/tomchen/font-template/issues/3). If you have downloaded `font_template.ai` before 2020-08-19 and made your `.ai` file based on the old version, you may optionally** update the artboard names in your `font_template.ai` using *either* of the following methods:
+
+* Copy your "Artwork glyph" layer (and any other layers you have added) from your old `.ai` file to the latest `font_template.ai`
+* *Or* execute [**`/other_files/update_artboard_names.js`**](https://github.com/tomchen/font-template/raw/master/other_files/update_artboard_names.js) in Illustrator: open your `.ai` file in Adobe Illustrator, in the menu, click "File" -> "Scripts" -> "Other Script...", find and select the downloaded `update_artboard_names.js` file, click "Open"
+
+After the update, delete and regenerate your glyph SVG files in `SVG` folder.
+
+*(\*\*: If you are using the old version but your glyphs are limited to basic [ASCII characters](https://en.wikipedia.org/wiki/ASCII#Character_set) therefore will not encounter any SVG Unicode filename related problem, you may opt not to update your `.ai` file)*
 
 ### Web fonts (alphabet or icon)
 
