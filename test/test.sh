@@ -2,7 +2,7 @@ mkdir -p SVG
 
 cp "../example/SVG/65 A.svg" .
 
-(cat ../template_desc/font_template-glyph_list-char-dec-filename_table.txt; echo) | sed 1d | while IFS=$'\t' read -r -a arr
+(cat ../other_files/font_template-glyph_list-char-dec-filename_table.txt; echo) | sed 1d | while IFS=$'\t' read -r -a arr
 do
  cp "65 A.svg" "SVG/${arr[2]}.svg"
 done
