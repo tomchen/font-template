@@ -8,7 +8,9 @@ Adobe Illustrator font templates that allow you to edit shapes of glyphs (charac
 * **`font_template_single.ai`** ([download](https://github.com/tomchen/font-template/raw/master/font_template_single.ai)): Adobe Illustrator font template for a single glyph. If you want, you can use this file instead of (or along with) `font_template.ai`.
 * **`batch_import_svg.py`** ([open](https://github.com/tomchen/font-template/raw/master/batch_import_svg.py), then <kbd>Ctrl</kbd>+<kbd>S</kbd> / <kbd>Cmd</kbd>+<kbd>S</kbd> to save): a python script that can import multiple SVG individual glyph files into FontForge's `.sfd` font file (and can optionally convert it to production font files, i.e. `.otf`, `.ttf`, `.woff`, `.woff2`, etc.)
 
-(Instead of downloading the files, you may also `git clone` or [download the whole repository](https://github.com/tomchen/font-template/archive/master.zip), of course)
+(Instead of downloading the files, you may also `git clone` or [download the whole repository](https://github.com/tomchen/font-template/archive/master.zip))
+
+(**ATTENTION: FontForge Windows Version 20200314 crashes when importing SVG files. This has been fixed but a newer FontForge stable version hasn't been released yet. For now, Windows user should use either a recent non-release build ([2020-08-15 build](https://ci.appveyor.com/api/buildjobs/gvptvmuefmyfmiw7/artifacts/fontforgebuilds%2FFontForge-mingw-w64-i686-829d9e-appveyor.7z)), or old Version 20190801 release ([download](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-Windows.exe)).** FontForge Linux versions do not have this bug)
 
 ## Usage
 
@@ -22,13 +24,13 @@ After finishing drawing the glyphs, hide "Example glyph" layer. Click "File" -> 
 
 ![AI menu export](https://github.com/tomchen/font-template/blob/master/img/2-ai_menu_export.png)
 
-Select the glyphs you want to export, select "SVG" format, click "Export Artboard".
+Select the glyphs you want to export (do not select empty ones), select "SVG" format, click "Export Artboard".
 
 ![AI export](https://github.com/tomchen/font-template/blob/master/img/3-ai_export.png)
 
 Exported individual glyph SVG files are inside an "SVG" folder, put it in a folder that also contains the `batch_import_svg.py` script file.
 
-For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`,* navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script by using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
+For Windows users, run `C:\Program Files (x86)\FontForgeBuilds\fontforge-console.bat`,* navigate to the folder using `cd <FOLDER_PATH>` and execute the Python script using `ffpython batch_import_svg.py`. An `output.sfd` font file will be generated.
 
 For Mac and Linux users, `cd <FOLDER_PATH>` and execute the `batch_import_svg.py` file with Python 3.
 
@@ -82,6 +84,14 @@ If a glyph's shape contains multiple overlapping paths, it would be better to jo
 ### Use existing free and open-source font file
 
 Instead of creating a font file with FontForge from scrach, it's sometimes a good idea to use an existing free and open-source font file as a base and fallback font. Typical open-source fonts with good glyph coverage are Adobe's [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro/tree/release/TTF) and [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro/tree/release/TTF). Choose a weight such as "Regular", depending on your needs. Open the font file with FontForge, edit it to create your font. However, if you use an existing font, you may need to edit not only A-Z, a-z but also their [ligatures](https://fontforge.org/docs/tutorial/editexample4.html#creating-a-ligature) such as "ff" and "fi".
+
+### Do not use empty glyphs
+
+When you select glyphs in Illustrator's "Export for Screens" window, you should not select empty glyphs, otherwise, you will see "I'm sorry this file is too complex for me to understand (or is erroneous)" warning when you executing `batch_import_svg.py` script. Nevertheless, the script will not be interrupted and will continue to generate the `output.sfd` file.
+
+### Update your font_template.ai before 2020-08-19
+
+On 19 August 2020, the project's `font_template.ai` file was updated (many artboard names were changed, e.g. `44 ,` were changed to `44 comma`) to fix an [Unicode filename issue](https://github.com/tomchen/font-template/issues/3). If you have downloaded `font_template.ai` before 2020-08-19 and made your `.ai` file based on the old version, you may optionally update the artboard names in your `font_template.ai` by executing an Adobe Illustrator script file [**`/other_files/update_artboard_names.js`**](https://github.com/tomchen/font-template/raw/master/other_files/update_artboard_names.js): open your `.ai` file in Adobe Illustrator, in the menu, click "File" -> "Scripts" -> "Other Script...", find and select `/other_files/update_artboard_names.js` file, click "Open", done. After the update, delete then regenerate your glyph SVG files in `SVG` folder. If you haven't encountered any Unicode or filename related problem, you may continue to use the old version.
 
 ### Web fonts (alphabet or icon)
 

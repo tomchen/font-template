@@ -1,0 +1,3 @@
+* text=auto eol=crlf
+*.txt text=auto eol=lf
+*.sh text=auto eol=lf

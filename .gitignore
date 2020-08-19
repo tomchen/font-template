@@ -1,4 +1,5 @@
-/unused/
+/test/*
+!/test/test.sh
 
 # Mac
 .DS_Store
