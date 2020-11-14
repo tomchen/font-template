@@ -10,7 +10,7 @@ Adobe Illustrator font templates that allow you to edit shapes of glyphs (charac
 
 (Instead of downloading the files, you may also `git clone` or [download the whole repository](https://github.com/tomchen/font-template/archive/master.zip))
 
-(**ATTENTION: FontForge Windows Version 20200314 crashes when importing SVG files. This has been fixed but a newer FontForge stable version hasn't been released yet. For now, Windows user should use either a recent non-release build ([2020-09-08 build](https://ci.appveyor.com/api/buildjobs/u88pr45ymdblq79m/artifacts/fontforgebuilds%2FFontForge-mingw-w64-i686-c3468c-appveyor.7z)), or old Version 20190801 release ([download](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-Windows.exe)).** FontForge Linux versions do not have this bug)
+(**Make sure you use the latest version of FontForge, which is 20th Anniversary Edition (2020-11-07) ([GitHub Release Page](https://github.com/fontforge/fontforge/releases) or [FontForge.org Download Page](https://fontforge.org/en-US/downloads/)). Old Windows version 20200314 crashes when importing SVG files.**)
 
 ## Usage
 
